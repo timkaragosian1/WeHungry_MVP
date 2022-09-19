@@ -1,20 +1,32 @@
+import { StyleSheet, Text, View, SafeAreaView, Dimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+
+import SignInScreen from './src/screens/SignInScreen';
+import SignUpScreen from './src/screens/SignUpScreen';
+import ConfirmEmailScreen from './src/screens/ConfirmEmailScreen/ConfirmEmailScreen';
+import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen/ForgotPasswordScreen';
+import NewPasswordScreen from './src/screens/NewPasswordScreen';
+import Navigation from './src/nagivation';
+import HomeScreen from './src/screens/HomeScreen';
+import RestaurantsScreen from './src/screens/RestaurantsScreen/RestaurantsScreen';
+//import * as SQLite from 'expo-sqlite';
+
+//global.db = SQLite.openDatabase('./assets/db/WeHungryDb.db');
+
+//built using https://www.youtube.com/watch?v=ALnJLbjI7EY
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.root}>
+      <StatusBar style='auto' barStyle='dark-content' />
+      <Navigation />
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  root: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#fafafa',
   },
 });
